@@ -1,9 +1,8 @@
-// 1. Transpose of a matrix
 #include <stdio.h>
 void main()
 {
-    int a[3][3], transposed[3][3], i, j;
-    printf("Enter matrix elements : ");
+    int a[3][3], b[3][3], c[3][3], i, j;
+    printf("Enter matrix A elements : ");
     for (i = 0; i < 3; i++)
     {
         for (j = 0; j < 3; j++)
@@ -11,7 +10,15 @@ void main()
             scanf("%d", &a[i][j]);
         }
     }
-    printf("Matrix : \n");
+    printf("Enter matrix B elements : ");
+    for (i = 0; i < 3; i++)
+    {
+        for (j = 0; j < 3; j++)
+        {
+            scanf("%d", &b[i][j]);
+        }
+    }
+    printf("Matrix A : \n");
     for (i = 0; i < 3; i++)
     {
         for (j = 0; j < 3; j++)
@@ -20,21 +27,22 @@ void main()
         }
         printf("\n");
     }
+    printf("Matrix B : \n");
     for (i = 0; i < 3; i++)
     {
         for (j = 0; j < 3; j++)
         {
-            transposed[j][i] = a[i][j]; // Swap indices
+            printf("%d\t", b[i][j]);
         }
+        printf("\n");
     }
-
-    // Display the transposed matrix
-    printf("Transposed Matrix : \n");
+    printf("Matrix A+B : \n");
     for (i = 0; i < 3; i++)
     {
         for (j = 0; j < 3; j++)
         {
-            printf("%d\t", transposed[i][j]);
+            c[i][j] = a[i][j] + b[i][j];
+            printf("%d\t", c[i][j]);
         }
         printf("\n");
     }
